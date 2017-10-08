@@ -19,6 +19,15 @@ models.BlockChain.findAll().then((blocks) => {
 });
 
 
+// BlockChain.chain.push({
+//   index: 1,
+//   timestamp: "Sun Oct 08 2017",
+//   data: JSON.stringify({amount: 15, username: "Bhavya Aggarwal", }),
+//   previousHash: blocks[i].previousHash,
+//   hash: blocks[i].hash
+// });
+
+
 
 
 

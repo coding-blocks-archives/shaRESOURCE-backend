@@ -4,28 +4,16 @@
 
 const router = require('express').Router();
 const db = require('./../db/models');
+const BlockChain = require('./../blockchainHandler').BlockChain;
+
 
 router.get('/', (req, res) => {
-  db.models.BlockChain.findAll().then(blocks => {
-    if (blocks.length !== 0) {
-      res.status(200).send({
-        success: true,
-        data: blocks
-      })
-    }
-    else {
-      res.status(404).send({
-        success: false,
-        error: "No blocks"
-      })
-    }
-  }).catch(err => {
-    console.log(err);
-    res.status(500).send({
-      success: false,
-      error: "Internal server error"
-    })
+
+  res.status(200).send({
+    success: true,
+    data: BlockChain.chain
   })
+
 });
 
 module.exports = router;

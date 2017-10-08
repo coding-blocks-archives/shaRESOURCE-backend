@@ -9,8 +9,15 @@ const Block = blockchain.Block;
 
 const BlockChainModel = require('./db/models').models.BlockChain;
 
-// BlockChain.addBlock(new Block(1, (new Date()).toDateString(), {amount: 50}, ''));
-// BlockChain.addBlock(new Block(2, (new Date()).toDateString(), {amount: 10}, ''));
+BlockChain.addBlock(new Block(1, (new Date()).toDateString(), JSON.stringify({
+  amount: 50,
+  username: "Bhavya Aggarwal"
+}), ''));
+BlockChain.addBlock(new Block(2, (new Date()).toDateString(), JSON.stringify({amount: 15, username: "Apoorvaa Gupta"}), ''));
+BlockChain.addBlock(new Block(3, (new Date()).toDateString(), JSON.stringify({amount: -20, username: "Arnav Gupta"}), ''));
+BlockChain.addBlock(new Block(4, (new Date()).toDateString(), JSON.stringify({amount: 25, username: "Apoorvaa Gupta"}), ''));
+BlockChain.addBlock(new Block(5, (new Date()).toDateString(), JSON.stringify({amount: 18, username: "Arnav Gupta"}), ''));
+BlockChain.addBlock(new Block(6, (new Date()).toDateString(), JSON.stringify({amount: -26, username: "Bhavya Aggarwal"}), ''));
 
 // console.log(BlockChain.isValid());
 // console.log(JSON.stringify(BlockChain, null, 4));
