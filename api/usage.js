@@ -27,20 +27,21 @@ router.post('/time', (req, res) => {
       slot: slot,
       amount: amount
     }).then((usage) => {
-      console.log(usage.get());
 
       db.models.Usage.findOne({
         where: {id: usage.id},
-        include:[db.models.Users]
+        include: [db.models.Users]
       }).then((finalUsage) => {
-        BlockchainHandler.addTransaction({usageId: finalUsage.id, amount: finalUsage.amount, user: finalUsage.user.name});
-        res.send({success: true, data: finalUsage.get()})
+        let result = BlockchainHandler.addTransaction({
+          usageId: finalUsage.id,
+          amount: finalUsage.amount,
+          user: finalUsage.user.name
+        });
+        res.send({success: result.success, data: finalUsage.get()})
       }).catch((err) => {
         console.log('Internal Server Error');
         res.send("Error");
       });
-
-
     }).catch((err) => {
       console.log('Internal Server Error');
       res.send("Error");
@@ -71,10 +72,14 @@ router.post('/bill', (req, res) => {
       console.log(usage);
       db.models.Usage.findOne({
         where: {id: usage.id},
-        include:[db.models.Users]
+        include: [db.models.Users]
       }).then((finalUsage) => {
-        BlockchainHandler.addTransaction({usageId: finalUsage.id, amount: finalUsage.amount, user: finalUsage.user.name});
-        res.send({success: true, data: finalUsage.get()})
+        const result = BlockchainHandler.addTransaction({
+          usageId: finalUsage.id,
+          amount: finalUsage.amount,
+          user: finalUsage.user.name
+        });
+        res.send({success: result.success, data: finalUsage.get()})
 
       }).catch((err) => {
         console.log('Internal Server Error');
@@ -113,10 +118,14 @@ router.post('/quantity', (req, res) => {
 
       db.models.Usage.findOne({
         where: {id: usage.id},
-        include:[db.models.Users]
+        include: [db.models.Users]
       }).then((finalUsage) => {
-        BlockchainHandler.addTransaction({usageId: finalUsage.id, amount: finalUsage.amount, user: finalUsage.user.name});
-        res.send({success: true, data: finalUsage.get()})
+        const result = BlockchainHandler.addTransaction({
+          usageId: finalUsage.id,
+          amount: finalUsage.amount,
+          user: finalUsage.user.name
+        });
+        res.send({success: result.success, data: finalUsage.get()})
 
       }).catch((err) => {
         console.log('Internal Server Error');

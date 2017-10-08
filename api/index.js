@@ -13,5 +13,6 @@ router.use('/locationtime', require('./locationtimeresource'));
 router.use('/locationquantity', require('./locationquantityresource'));
 router.use('/locationnbill', require('./locationbillresource'));
 router.use('/usage', require('./usage'));
+router.use('/blockchain', require('./blockchain'));
 
 module.exports = router;

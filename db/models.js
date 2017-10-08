@@ -82,7 +82,16 @@ LocationTimeResource.hasMany(Usage);
 LocationQuantityResource.hasMany(Usage);
 LocationBillResource.hasMany(Usage);
 
-db.sync({alter: false}).then(() => {
+const BlockChain = db.define('blockchain', {
+  id: {type: Sequelize.DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
+  index: Sequelize.DataTypes.INTEGER,
+  timestamp: Sequelize.DataTypes.STRING,
+  data: Sequelize.DataTypes.STRING(1234),
+  previousHash: Sequelize.DataTypes.STRING(1234),
+  hash: Sequelize.DataTypes.STRING(1234)
+});
+
+db.sync({force: true}).then(() => {
   console.log('Database configured')
 });
 
@@ -96,6 +105,7 @@ module.exports = {
     LocationTimeResource,
     LocationQuantityResource,
     LocationBillResource,
-    Usage
+    Usage,
+    BlockChain
   }
 };

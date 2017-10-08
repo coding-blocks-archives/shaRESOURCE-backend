@@ -14,9 +14,13 @@ app.use(function (req, res, next) {
 });
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+require('./addData');
 
 app.use('/api', require('./api'));
+
+app.use('/', express.static(__dirname + '/public'));
 
 app.listen(8080, function () {
   console.log("Listening on 8080");
