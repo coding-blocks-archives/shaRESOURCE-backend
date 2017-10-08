@@ -21,6 +21,9 @@ require('./addData');
 app.use('/api', require('./api'));
 
 app.use('/', express.static(__dirname + '/public'));
+app.use('/profile/1', express.static(__dirname + '/public/proofile1.html'));
+app.use('/profile/2', express.static(__dirname + '/public/profile2.html'));
+app.use('/profile/3', express.static(__dirname + '/public/profile3.html'));
 
 app.listen(8080, function () {
   console.log("Listening on 8080");
