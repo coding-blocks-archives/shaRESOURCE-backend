@@ -11,6 +11,10 @@ body{
     margin: 0;
 }
 
+*{
+    font-family: 'Lato', sans-serif;
+}
+
 #side-menu {
     /*height: 100vh;*/
     /*position: fixed;*/
@@ -157,7 +161,7 @@ body{
 
 .title{
     background-color: white;
-    box-shadow: #DDD 0 0 8px 1px ;
+    /*box-shadow: #DDD 0 0 8px 1px ;*/
     border-radius: .125rem;
     height: auto;
     padding: 10px;
@@ -165,12 +169,12 @@ body{
 }
 
 .titlerow{
-    /*background-color: white;*/
+    background-color: white;
     height: auto;
     padding: 30px;
     padding-top: 0;
     padding-bottom: 0;
-    /*box-shadow: #DDD 0 0 8px 1px ;*/
+    box-shadow: #DDD 0 0 8px 1px ;
     /*border-radius: .125rem;*/
 }
 
