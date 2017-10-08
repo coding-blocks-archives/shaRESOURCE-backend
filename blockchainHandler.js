@@ -16,5 +16,6 @@ console.log(JSON.stringify(BlockChain, null, 4));
 module.exports = {
   addTransaction: function (data) {
     BlockChain.addBlock(new Block(BlockChain.chain.length, (new Date()).toDateString(), data, ''));
+    console.log(JSON.stringify(BlockChain.chain, null, 4));
   }
 };
