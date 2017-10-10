@@ -47,7 +47,7 @@
         <div id="userDetails" class="dropdown col-sm-3 col-12 align-middle header-dropdown text-center mt-auto mb-auto">
             <!--<img src="/images/boy.png" class="img-circle header-profile-img">-->
             <span id="name" style=" color: white;">Hey Arnav!</span>&nbsp;&nbsp;<button class=" btn btn-info"
-                                                                                           style="padding: 5px 15px;font-size: 14px; border-radius: 0.25rem; cursor: pointer; background-color: #02B3E4">
+                                                                                        style="padding: 5px 15px;font-size: 14px; border-radius: 0.25rem; cursor: pointer; background-color: #02B3E4">
             Logout
         </button>
 
@@ -78,31 +78,46 @@
                         <div class="col-4 "><img style="border-radius: 50%; height: 204px" src="/1327050.jpg"></div>
                         <div class="col-6" style="vertical-align: middle"><br><br>
                             <h1>Arnav Gupta</h1>
-                            <h2>SRTs: -92</h2></div>
+                            <h2 id="srts">SRTs: -92</h2></div>
                     </div>
                     <br>
 
-                    <div class="row"><div class="col-1"></div><div class="col-3"> <h2>My Locations:</h2></div></div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-3"><h2>My Locations:</h2></div>
+                    </div>
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-6">
 
                             <ul style="width:100%" ; class="list-group">
-                                <li class="list-group-item" style="width:100%;">Flat - SRTs: -110</li>
+                                <li id="flat" class="list-group-item" style="width:100%;">Flat - SRTs: -110</li>
                                 <li class="list-group-item" style="width:100%;">Co Wrks - SRTs: 18</li>
-                            </ul></div>
+                            </ul>
+                        </div>
                     </div>
                     <br>
-                    <div class="row"><div class="col-1"></div><div class="col-3"> <h2>My Friends:</h2></div></div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-3"><h2>My Friends:</h2></div>
+                    </div>
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-6">
 
                             <ul style="width:100%" ; class="list-group">
-                                <li class="list-group-item" style="width:100%;"><img src="/IMG-20170715-WA0001.jpg" style="border-radius: 50%; height: 50px"> &nbsp;&nbsp; Apoorvaa Gupta : SRTs: 40 &nbsp;&nbsp; <a class="btn btn-success text-white">Pay via PhonePe</a></li>
-                                <li class="list-group-item" style="width:100%;"><img src="/15672953_1423463974330537_5537727918350408487_n.jpg" style="border-radius: 50%; height: 50px"> &nbsp;&nbsp; Bhavya Aggarwal : SRTs: 24 &nbsp;&nbsp; <a class="btn btn-success text-white">Pay via PhonePe</a></li>
+                                <li id="apoSrt" class="list-group-item" style="width:100%;"><img src="/IMG-20170715-WA0001.jpg"
+                                                                                     style="border-radius: 50%; height: 50px">
+                                    &nbsp;&nbsp; Apoorvaa Gupta : SRTs: 40 &nbsp;&nbsp; <a
+                                            class="btn btn-success text-white" id="apo">Pay via PhonePe</a></li>
+                                <li id="bhaSrt" class="list-group-item" style="width:100%;"><img
+                                        src="/15672953_1423463974330537_5537727918350408487_n.jpg"
+                                        style="border-radius: 50%; height: 50px"> &nbsp;&nbsp; Bhavya Aggarwal : SRTs:
+                                    24 &nbsp;&nbsp; <a class="btn btn-success text-white" id="bha">Pay via PhonePe</a>
+                                </li>
 
-                            </ul></div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,8 +129,27 @@
 <br>
 <br>
 <script type=" text/javascript" src="/js/jquery-3.2.1.js"></script>
-<script type = "text/javascript" src = "/js/bootstrap.js" ></script>
-<!-- < script
-src = "js/index.js" ></script>-->
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+<script>
+  $('#bha').click(function () {
+    $('#srts').text('SRTs: -68')
+    $('#flat').text('Flat - SRTs: -86')
+    $('#bhaSrt').html('<img\n' +
+      '                                        src="/15672953_1423463974330537_5537727918350408487_n.jpg"\n' +
+      '                                        style="border-radius: 50%; height: 50px"> &nbsp;&nbsp; Bhavya Aggarwal : SRTs:\n' +
+      '                                    0 &nbsp;&nbsp; <a class="btn btn-success text-white" id="bha">Pay via PhonePe</a>\n' +
+      '                                ')
+  })
+  $('#apo').click(function () {
+    $('#srts').text('SRTs: -52')
+    $('#flat').text('Flat - SRTs: -70')
+    $('#apoSrt').html('<img src="/IMG-20170715-WA0001.jpg"\n' +
+      '                                                                                     style="border-radius: 50%; height: 50px">\n' +
+      '                                    &nbsp;&nbsp; Apoorvaa Gupta : SRTs: 0 &nbsp;&nbsp; <a\n' +
+      '                                            class="btn btn-success text-white" id="apo">Pay via PhonePe</a>')
+
+  })
+</script>
 </body>
 </html>
